@@ -1,38 +1,230 @@
-.App {
+/* Estilo general */
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+  color: #495057;
+}
+
+/* Estilo del contenedor principal */
+.app {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del título */
+h1 {
+  color: #007bff;
+  font-size: 2rem;
+  margin-bottom: 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Barra de búsqueda */
+.search-bar {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-bar input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.search-bar button {
+  width: 25%;
+  margin-left: 10px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* Estilos de los botones de filtro */
+.filter-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  width: 30%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+/* Estilo de la lista de tareas */
+.list-group {
+  list-style: none;
+  padding: 0;
+}
+
+.list-group-item {
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+  background-color: #f1f1f1;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+}
+
+.task-content span {
+  flex-grow: 1;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: text-decoration 0.3s ease;
+}
+
+.completed {
+  background-color: #d3f9d8;
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+/* Botón de eliminar tarea */
+button {
+  margin-left: 10px;
+}
+
+/* Estilo en dispositivos móviles */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
   }
-  to {
-    transform: rotate(360deg);
+
+  .search-bar input {
+    margin-bottom: 10px;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-buttons button {
+    width: 100%;
+  }
+}
+
+/* Estilo de la barra de búsqueda */
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.add-task-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-task-bar input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.add-task-bar button {
+  width: 25%;
+  margin-left: 10px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* Filtros y tareas (sin cambios) */
+.filter-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  width: 30%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+/* Estilos para las tareas (sin cambios) */
+.list-group-item {
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+  background-color: #f1f1f1;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+}
+
+.task-content span {
+  flex-grow: 1;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: text-decoration 0.3s ease;
+}
+
+.completed {
+  background-color: #d3f9d8;
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .search-bar, .add-task-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar input, .add-task-bar input {
+    margin-bottom: 10px;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-buttons button {
+    width: 100%;
   }
 }
